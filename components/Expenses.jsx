@@ -1,16 +1,13 @@
 import ExpenseItem from "./ExpenseItem";
+import Card from "./Card";
 import './Expenses.css';
 
 const Expenses = (props) => {
     return (
-        <div class="expenses">
-            {props.expenses.map((expense, index) => (
-                <ExpenseItem
-                    key={index}
-                    data={expense}
-                />
-            ))}
-        </div>
+        <Card className="expenses">
+            <ExpenseItem data={props.expenses[0]} />
+            <ExpenseItem data={props.expenses[1]} />
+        </Card>
     );
 };
 
