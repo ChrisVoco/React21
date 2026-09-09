@@ -1,29 +1,26 @@
 import './App.css';
+import ExpenseItem from '/components/ExpenseItem';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src="Octocat.png" className="App-logo" alt="logo" />
-        <p>
-          GitHub Codespaces <span className="heart">♥️</span> React
-        </p>
-        <p className="small">
-          Edit <code>src/App.jsx</code> and save to reload.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </p>
-      </header>
-    </div>
-  );
+const App = () => {
+    const expenses = [
+        {
+            date: new Date (2024, 10, 12),
+            title: 'New Book',
+            price: 30.99
+        },
+        {
+            date: new Date (2024, 10, 12),
+            title: 'New Jeans',
+            price: 99.99
+        }
+    ]
+
+    return (
+        <div classname="App">
+            <ExpenseItem data={expenses[0]}/>
+            <ExpenseItem data={expenses[1]}/>
+        </div>
+    );
 }
 
 export default App;
